@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ivy Gomez — Relax, Restore, Renew</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --accent:#9DB17C;
+            --accent-600:#829564;
+            --bg:#F4F1EA;
+            --muted:#A9A28D;
+            --glass: rgba(244, 241, 234, 0.55);
+            --container:1100px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+        body{background:linear-gradient(180deg, #F4F1EA 0%, #EAE6DD 60%);color:#3D403A;}
+        .wrap{max-width:var(--container);margin:0 auto;padding:24px;}
+
+        header.site-header{
+            position:relative;
+            padding-top:18px;
+            padding-bottom:48px;
+        }
+
+        /* NAV */
+        .brand{
+            display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;
+            font-family:Montserrat,Inter;letter-spacing:0.4px;
+        }
+        .logo-ico{
+            width:44px;height:44px;border-radius:10px;
+            background:linear-gradient(135deg,var(--accent),var(--accent-600));
+            display:inline-grid;place-items:center;color:white;font-weight:700;
+            box-shadow:0 6px 18px rgba(103,153,129,0.18);
+        }
+        nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+        .nav-links{display:flex;gap:18px;align-items:center}
+        .nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+        .nav-links a:hover{color:#3D403A;background:var(--glass)}
+        .cta{display:flex;gap:12px;align-items:center}
+        .btn{
+            background:var(--accent);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;
+            box-shadow:0 6px 18px rgba(91,156,128,0.14);
+        }
+        .btn.secondary{background:transparent;color:#3D403A;border:1px solid rgba(61, 64, 58, 0.06);box-shadow:none}
+
+        /* HERO */
+        .hero{
+            display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:36px;
+            position:relative;
+        }
+        .hero-content{max-width:680px}
+        h1{margin:0 0 12px 0;font-family:Montserrat;font-size:36px;line-height:1.05;color:#3D403A}
+        p.lead{margin:0 0 18px;color:var(--muted);font-size:16px}
+        .actions{display:flex;gap:12px;align-items:center}
+        .info-card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+            border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(20,40,30,0.06);
+            display:flex;flex-direction:column;gap:10px;
+        }
+        .phone{font-weight:700;color:#3D403A}
+        .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;font-size:13px;background:rgba(157,177,124,0.12);color:var(--accent-600)}
+
+        /* decorative image block */
+        .hero-art{
+            height:320px;border-radius:18px;background:
+                radial-gradient(ellipse at 20% 20%, rgba(244, 241, 234, 0.9) 0%, transparent 20%),
+                linear-gradient(180deg,#EAE6DD, #F4F1EA);
+            display:flex;flex-direction:column;justify-content:center;align-items:center;padding:22px;
+            text-align:center;color:#3D403A;
+        }
+        .spa-illustration{width:100%;height:220px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#6b8a76;font-weight:700;object-fit: cover;}
+
+        /* responsive */
+        @media (max-width:880px){
+            .hero{grid-template-columns:1fr;gap:18px}
+            .hero-art{height:220px}
+            nav{gap:12px}
+            .nav-links{display:none}
+            .menu-toggle{display:inline-flex}
+        }
+
+        .menu-toggle{display:none;background:transparent;border:0;padding:10px;border-radius:8px}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap" role="navigation" aria-label="Main">
+            <nav>
+                <a href="#" class="brand" aria-label="Ivy Gomez home">
+                    <span class="logo-ico" aria-hidden="true">IV</span>
+                    <div>
+                        <div style="font-size:15px">Ivy Gomez</div>
+                        <div style="font-size:12px;color:var(--muted);margin-top:2px">Skin Specialist</div>
+                    </div>
+                </a>
+
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div class="nav-links" role="menubar" aria-hidden="false">
+                        <a href="#about" role="menuitem">About</a>
+                        <a href="#contact" role="menuitem">Contact</a>
+                    </div>
+
+                    <div class="cta">
+                        <a class="btn" href="#book" aria-label="Book an appointment">Book Now</a>
+                        <a class="btn secondary" href="#gift" aria-label="Gift cards">Gift Cards</a>
+                        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" id="menuToggle">
+                            <span class="sr-only">Toggle menu</span>
+                            <!-- simple hamburger -->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect width="22" height="2" rx="1" fill="#123"></rect>
+                                <rect y="6" width="22" height="2" rx="1" fill="#123" opacity="0.6"></rect>
+                                <rect y="12" width="22" height="2" rx="1" fill="#123" opacity="0.4"></rect>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- HERO -->
+            <section class="hero" aria-labelledby="hero-heading">
+                <div class="hero-content">
+                    <!-- <div class="badge" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="display:block">
+                            <path d="M12 2c1.7 2 4 3 6 3-1 2-1 5-4 7s-5 3-7 4c0-3 1-7 5-14z" fill="currentColor" style="color:var(--accent-600)"/>
+                        </svg>
+                        New: Autumn herbal rituals
+                    </div> -->
+
+                    <h1 id="hero-heading">Restore balance with personalized spa rituals</h1>
+                    <p class="lead">Therapeutic massages, herbal steams and signature facials tailored to your body and senses. Quiet atmosphere — expert therapists — clean, calming spaces.</p>
+
+                    <div class="actions">
+                        <a class="btn" href="#book">Reserve a session</a>
+                        <a class="btn secondary" href="#services">Explore services</a>
+                    </div>
+
+                    <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+                        <div class="info-card" style="min-width:220px">
+                            <div style="font-size:13px;color:var(--muted)">Walk-ins welcome • Gift cards available</div>
+                            <div style="display:flex;justify-content:space-between;align-items:center">
+                                <div>
+                                    <div style="font-size:12px;color:var(--muted)">Call to book</div>
+                                    <div class="phone">+1 (555) 123-4567</div>
+                                </div>
+                                <div style="font-size:12px;color:var(--muted);text-align:right">Open daily 9am–8pm</div>
+                            </div>
+                        </div>
+
+                        <div style="font-size:13px;color:var(--muted)">Location: 42 Ivy Lane • Free parking</div>
+                    </div>
+                </div>
+
+                <aside class="hero-art" aria-hidden="true">
+                    <img src="imgs/photo-1570172619644-dfd03ed5d881.avif" alt="Relaxing spa scene" class="spa-illustration">
+                    <div style="margin-top:12px;color:var(--muted);font-size:13px">Signature herbal compresses & hot stone therapy</div>
+                </aside>
+            </section>
+        </div>
+    </header>
+
+    <script>
+        // Mobile menu toggle (reveals nav-links by toggling attribute; CSS sets nav-links hidden at small widths)
+        (function(){
+            const btn = document.getElementById('menuToggle');
+            const navLinks = document.querySelector('.nav-links');
+            btn && btn.addEventListener('click', function(){
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                if(navLinks.style.display === 'flex'){
+                    navLinks.style.display = '';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.background = 'rgba(255,255,255,0.95)';
+                    navLinks.style.padding = '10px';
+                    navLinks.style.borderRadius = '10px';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.right = '24px';
+                    navLinks.style.top = '64px';
+                    navLinks.style.boxShadow = '0 10px 30px rgba(20,40,30,0.06)';
+                }
+            });
+        })();
+    </script>
+</body>
+</html></svg>
