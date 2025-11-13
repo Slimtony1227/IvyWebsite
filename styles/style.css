@@ -47,8 +47,8 @@
         }
         .hero-content{max-width:680px}
         h1{margin:0 0 12px 0;font-family:Montserrat;font-size:36px;line-height:1.05;color:#3D403A}
-        p.lead{margin:0 0 18px;color:var(--muted);font-size:16px}
-        .actions{display:flex;gap:12px;align-items:center}
+        p.lead{margin:0 0 24px;color:var(--muted);font-size:16px}
+        .actions{display:flex;gap:12px;align-items:center;margin-top:12px}
         .info-card{
             background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
             border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(20,40,30,0.06);
